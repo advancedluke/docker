@@ -3,7 +3,8 @@
 
 ### Docker run options
 ~~~
-docker run -d --privileged=true \
+docker run -d \
+--privileged=true \
 -m 300M \
 --memory-reservation=200M \
 --memory-swappiness=0 \

@@ -1,0 +1,4 @@
+# For Docker Registry v2
+# with External Volume Mount
+
+docker run -d -p 5000:5000  --name="registry-2" --restart=always -v /data/registry2/image:/data -e REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/data -e REGISTRY_STORAGE_DELETE_ENABLED=true registry:2

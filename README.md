@@ -1,7 +1,29 @@
 # Advanced Tips for Docker use
 
+### Docker Install
+~~~
+wget -qO- https://get.docker.com/ | sh
 
-### Docker run options
+sudo usermod -aG docker $(id -un)
+sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"/g' /etc/default/grub
+sudo update-grub
+~~~
+
+#### Change Docker Version (option)
+~~~
+wget https://get.docker.com/builds/Linux/x86_64/docker-<new_version>
+sudo service docker stop
+sudo mv /usr/bin/docker /usr/bin/docker-<old_version>
+sudo mv docker-<new_version> /usr/bin/docker
+sudo chmod +x /usr/bin/docker
+~~~
+
+### Docker run
+~~~
+docker run -d -p 80:80 my_image service nginx start
+~~~
+
+### Docker extra options
 ~~~
 docker run -d \
 --privileged=true \

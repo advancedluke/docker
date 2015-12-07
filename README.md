@@ -20,7 +20,7 @@ sudo chmod +x /usr/bin/docker
 
 ### Docker run
 ~~~
-docker run -d -p 80:80 my_image service nginx start
+docker run -d -p 80:80 --name my_image nginx
 ~~~
 
 ### Docker extra options

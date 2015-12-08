@@ -23,7 +23,7 @@ sudo chmod +x /usr/bin/docker
 docker run -d -p 80:80 --name my_image nginx
 ~~~
 
-### Docker extra options
+### Docker run - extra options
 ~~~
 docker run -d \
 --privileged=true \
@@ -34,15 +34,8 @@ docker run -d \
 --cpu-quota=50000 \
 --name cn1 \
 -h cn1 \
+--restart=always
 mcphub/ubuntu-sd:14.04
 ~~~
 
--d
---privileged=true
--m
---memory-reservation
---memory-swappiness
---cpu-period
---cpu-quota
---name
--h
+http://docs.docker.com/engine/reference/commandline/run/

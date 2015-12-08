@@ -21,6 +21,7 @@ sudo chmod +x /usr/bin/docker
 ### Docker run
 ~~~
 docker run -d -p 80:80 --name my_image nginx
+docker run -d --privileged=true --name cn1 -h cn1 mcphub/ubuntu-sd:14.04
 ~~~
 
 ### Docker run - extra options

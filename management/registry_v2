@@ -12,12 +12,11 @@ registry:2
 docker run -d -p 5000:5000  \
 --name="registry-2" --restart=always \
 -e REGISTRY_STORAGE_DELETE_ENABLED=true \
+-e REGISTRY_STORAGE=s3 \
 -e REGISTRY_STORAGE_S3_accesskey= \
 -e REGISTRY_STORAGE_S3_secretkey= \
 -e REGISTRY_STORAGE_S3_region= \
 -e REGISTRY_STORAGE_S3_bucket= \
--e REGISTRY_STORAGE_S3_encrypt=true \
--e REGISTRY_STORAGE_S3_secure=true \
 registry:2
 
 

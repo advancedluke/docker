@@ -72,8 +72,8 @@ sudo lsblk
 ## Backend Storage Type : xfs
 sudo docker daemon -D -s devicemapper --storage-opt dm.datadev=/dev/direct-lvm/data --storage-opt dm.metadatadev=/dev/direct-lvm/metadata --storage-opt dm.fs=xfs --storage-opt dm.basesize=5G
 
-## Backend Storage Type : ext4
-#sudo docker daemon -D -s devicemapper --storage-opt dm.datadev=/dev/direct-lvm/data --storage-opt dm.metadatadev=/dev/direct-lvm/metadata --storage-opt dm.fs=ext4 --storage-opt dm.basesize=5G
+## Backend Storage Type : extfs
+#sudo docker daemon -D -s devicemapper --storage-opt dm.datadev=/dev/direct-lvm/data --storage-opt dm.metadatadev=/dev/direct-lvm/metadata --storage-opt dm.fs=extfs --storage-opt dm.basesize=5G
 
 #sudo service docker start
 
@@ -96,7 +96,7 @@ sudo dmsetup resume $DEV
 sudo xfs_growfs /dev/mapper/$DEV
 sudo xfs_info /dev/mapper/$DEV
 
-## if backend storage type : ext4
+## if backend storage type : extfs
 #sudo resize2fs /dev/mapper/$DEV
 
 ## Check Container IP Address

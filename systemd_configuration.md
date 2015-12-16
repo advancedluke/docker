@@ -1,7 +1,7 @@
 #### Reference
 https://docs.docker.com/engine/articles/systemd/
 
-#### Docker 환경 설정
+#### Apply Docker Option in /etc/default/docker
 
 /lib/systemd/system/docker.service
 
@@ -24,10 +24,13 @@ LimitCORE=infinity
 WantedBy=multi-user.target
 ~~~
 
+
 sudo systemctl daemon-reload
 
-sudo systemctl start docker 
+sudo systemctl start docker
+
 sudo service docker start
 
 sudo systemctl status docker
+
 sudo service docker status

@@ -1,6 +1,7 @@
-### https://docs.docker.com/engine/articles/systemd/
+#### Reference
+https://docs.docker.com/engine/articles/systemd/
 
-### Docker 환경 설정
+#### Docker 환경 설정
 
 /lib/systemd/system/docker.service
 
@@ -26,7 +27,7 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 
 sudo systemctl start docker 
-#sudo service docker start
+sudo service docker start
 
 sudo systemctl status docker
-#sudo service docker status
+sudo service docker status

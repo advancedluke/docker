@@ -10,4 +10,5 @@ ssh_port=$(docker exec -it $container_name netstat -apt | grep sshd | grep -v 't
 docker exec -it $container_name sed -i "s/Port $ssh_port/Port $new_ssh_port/g" /etc/ssh/sshd_config
 
 # Restart the container
+# docker exec -it $container_name supervisorctl restart sshd
 docker restart $container_name

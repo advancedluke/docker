@@ -5,6 +5,15 @@
 container_name=cn1
 new_ssh_port=2222
 
+### Check either the new port is availible or not
+sudo nc -z localhost $new_ssh_port
+if [ $? != 0 ]; then
+     echo -e "The Port is Not in use"
+else
+     echo -e "Error : The Port is In Use"
+     exit 1
+fi
+
 ### Check current sshd port number
 ssh_port=$(docker exec -it $container_name cat /etc/ssh/sshd_config | grep Port | grep -o '[0-9]\+')
 
@@ -16,3 +25,5 @@ docker exec -it $container_name supervisorctl restart sshd
 
 ### Or Restart the container
 # docker restart $container_name
+
+exit 0

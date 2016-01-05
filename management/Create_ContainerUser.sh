@@ -13,4 +13,4 @@ docker exec $container sh -c "echo $user ALL='('ALL')' NOPASSWD':'ALL > /etc/sud
 docker exec $container chmod 0440 /etc/sudoers.d/$user
 
 ## Remove User
-docker exec $container userdel -r $use
+docker exec $container userdel -r $user

@@ -1,3 +1,4 @@
+# Support 802.1q VLAN Tag
 # Custom Variables
 container_name=cn1
 new_ip=192.168.200.1

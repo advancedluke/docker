@@ -3,7 +3,6 @@ container_name=cn1
 new_ip=192.168.200.1
 new_ip_prefix=16
 broadcast_addr=192.168.255.255
-vlan_id=10
 default_gateway=192.168.20.1
 
 # Automatic Variables

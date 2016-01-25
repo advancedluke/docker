@@ -2,6 +2,7 @@
 container_name=cn1
 new_ip=192.168.200.1
 new_ip_prefix=16
+vlan_id=10
 default_gateway=192.168.20.1
 
 # Automatic Variables
@@ -17,6 +18,7 @@ sudo ln -s /proc/$pid/ns/net /var/run/netns/$pid
 sudo ip netns exec $pid ip link set eth0 down
 sudo ip netns exec $pid ip addr del $ip/$ip_prefix dev eth0
 sudo ip netns exec $pid ip addr add $new_ip/$new_ip_prefix dev eth0
+#sudo ip netns exec $pid ip link add link eth0 name eth0.$vlan_id type vlan id $vlan_id
 sudo ip netns exec $pid ip link set eth0 address $MACADDR
 sudo ip netns exec $pid ip link set eth0 up
 sudo ip netns exec $pid ip route add default via $default_gateway

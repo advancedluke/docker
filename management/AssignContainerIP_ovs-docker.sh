@@ -24,16 +24,15 @@ ps -ea | grep ovs
 
 ## Config OVS Bridge
 
-## Temporary
-default_gateway=192.168.20.1
+## Temporary ( for Testing )
+default_gateway=192.168.0.254
 ovs-vsctl add-br br0
 ovs-vsctl add-port br0 eth0
 ifconfig eth0 0.0.0.0
 ifconfig br0 192.168.50.1/16
 ip route add default via $default_gateway
 
-## Perminant 
-
+## Perminant Save
 ## OVS Bridge with Single NIC
 # /etc/network/interfaces
 
@@ -42,6 +41,7 @@ iface br0 inet static
         address 192.168.50.1
         netmask 255.255.0.0
         gateway 192.168.0.254
+        dns-nameservers 8.8.8.8
         ovs_type OVSBridge
         ovs_ports eth0
 

@@ -14,8 +14,6 @@
 # - To permanently enable IP forwarding, edit sysctl.conf so thatnet.ipv4.ip_forward is set to 1.
 
 ## Install OpenVSwitch
-
-# Add ovs 2.4.0 Repository 
 sudo add-apt-repository ppa:suawekk/openvswitch
 sudo apt-get update
 sudo apt-get install openvswitch-switch bridge-utils -y

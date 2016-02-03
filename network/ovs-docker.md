@@ -1,27 +1,3 @@
-## OVS Bridge Configuration References
-https://gist.github.com/noteed/8656989
-https://wiredcraft.com/blog/multi-host-docker-network/
-http://cloudgeekz.com/400/how-to-use-openvswitch-with-docker.html
-http://www.opencloudblog.com/?p=386
-http://www.openvswitch.org/support/config-cookbooks/vlan-configuration-cookbook/
-http://zcentric.com/2014/07/07/openvswitch-kvm-libvirt-ubuntu-vlans-the-right-way/
-https://pve.proxmox.com/wiki/Open_vSwitch
-http://git.openvswitch.org/cgi-bin/gitweb.cgi?p=openvswitch;a=blob;f=debian/openvswitch-switch.README.Debian;hb=HEAD
-OVS Patch : http://blog.scottlowe.org/2012/11/27/connecting-ovs-bridges-with-patch-ports/
-https://pve.proxmox.com/wiki/Open_vSwitch
-OVS Configuration Samples : http://git.openvswitch.org/cgi-bin/gitweb.cgi?p=openvswitch;a=blob;f=debian/openvswitch-switch.README.Debian;hb=HEAD
-
-- To temporarily enable IP forwarding, use 
-```
-sysctl -w net.ipv4.ip_forward=1
-```
-This will not persist across reboots.
-
-- To permanently enable IP forwarding, edit sysctl.conf 
-```
-net.ipv4.ip_forward=1
-```
-
 #### Install OpenVSwitch
 ```sh
 sudo add-apt-repository ppa:suawekk/openvswitch
@@ -92,4 +68,28 @@ sudo ovs-docker add-port $bridge $interface $container_id --ipaddress=$ipaddress
 ```sh
 sudo ovs-docker del-ports $bridge $container_id
 docker stop $container_id
+```
+
+###### OVS Bridge Configuration References
+https://gist.github.com/noteed/8656989
+https://wiredcraft.com/blog/multi-host-docker-network/
+http://cloudgeekz.com/400/how-to-use-openvswitch-with-docker.html
+http://www.opencloudblog.com/?p=386
+http://www.openvswitch.org/support/config-cookbooks/vlan-configuration-cookbook/
+http://zcentric.com/2014/07/07/openvswitch-kvm-libvirt-ubuntu-vlans-the-right-way/
+https://pve.proxmox.com/wiki/Open_vSwitch
+http://git.openvswitch.org/cgi-bin/gitweb.cgi?p=openvswitch;a=blob;f=debian/openvswitch-switch.README.Debian;hb=HEAD
+OVS Patch : http://blog.scottlowe.org/2012/11/27/connecting-ovs-bridges-with-patch-ports/
+https://pve.proxmox.com/wiki/Open_vSwitch
+OVS Configuration Samples : http://git.openvswitch.org/cgi-bin/gitweb.cgi?p=openvswitch;a=blob;f=debian/openvswitch-switch.README.Debian;hb=HEAD
+
+- To temporarily enable IP forwarding, use 
+```
+sysctl -w net.ipv4.ip_forward=1
+```
+This will not persist across reboots.
+
+- To permanently enable IP forwarding, edit sysctl.conf 
+```
+net.ipv4.ip_forward=1
 ```

@@ -45,7 +45,7 @@ iface eth0 inet manual
 docker run -d --net='none' --privileged=true --name cn1 -h cn1 mcphub/ubuntu-sd:14.04
 ```
 
-#### MCP Container Network Configuration
+#### Container Network Configuration
 - After Run/Start Container
 ```sh
 # Custom Variables

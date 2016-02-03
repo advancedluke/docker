@@ -25,7 +25,7 @@ docker run -d -p 5000:5000  \
 registry:2
 ```
 
-# Check Registry Images with API
+### Check Registry Images with API
 
 ```sh
 curl -X GET http://localhost:5000/v2/

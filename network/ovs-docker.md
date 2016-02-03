@@ -66,6 +66,9 @@ sudo ovs-docker add-port $bridge $interface $container_id --ipaddress=$ipaddress
 
 - Stop Container
 ```sh
+container_name=cn1
+bridge=br0
+container_id=$(docker inspect -f '{{.Id}}' $container_name)
 sudo ovs-docker del-ports $bridge $container_id
 docker stop $container_id
 ```

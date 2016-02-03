@@ -1,6 +1,6 @@
 # For Docker Registry v2
 
-### with External Volume Mount
+#### with External Volume Mount
 
 ```sh
 docker run -d -p 5000:5000  \
@@ -11,7 +11,7 @@ docker run -d -p 5000:5000  \
 registry:2
 ```
 
-### with Backend Storage : AWS S3
+#### with Backend Storage : AWS S3
 
 ```sh
 docker run -d -p 5000:5000  \
@@ -25,7 +25,7 @@ docker run -d -p 5000:5000  \
 registry:2
 ```
 
-### Check Registry Images with API
+#### Check Registry Images with API
 
 ```sh
 curl -X GET http://localhost:5000/v2/

@@ -40,6 +40,14 @@ iface eth0 inet manual
         ovs_type OVSPort
 ```
 
+#### Install Docker
+```sh
+wget -qO- https://get.docker.com/ | sh
+sudo usermod -aG docker $(id -un)
+sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"/g' /etc/default/grub
+sudo update-grub
+```
+
 #### Run Docker Container
 ```sh
 docker run -d --net='none' --privileged=true --name cn1 -h cn1 mcphub/ubuntu-sd:14.04

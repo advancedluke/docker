@@ -50,7 +50,8 @@ sudo update-grub
 
 #### Run Docker Container
 ```sh
-docker run -d --net='none' --privileged=true --name cn1 -h cn1 mcphub/ubuntu-sd:14.04
+container_name=cn1
+docker run -d --net='none' --privileged=true --name $container_name -h $container_name --add-host="$container_name:127.0.1.1" mcphub/ubuntu-sd:14.04
 ```
 
 #### Container Network Configuration

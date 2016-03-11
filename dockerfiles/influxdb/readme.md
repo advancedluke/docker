@@ -15,4 +15,6 @@ docker run -d --privileged=true --name influxdb -h influxdb --add-host="infuxdb:
 ~~~
 
 - Web interface
+~~~
 http://<host_ip>:8083
+~~~

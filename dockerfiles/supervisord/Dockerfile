@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER luke <iyham@naver.com>
 ENV DEBIAN_FRONTEND noninteractive
 ENV user "ubuntu"
-ENV password "changeme!!@@"
+ENV password "ubuntu"
 RUN useradd $user -m  -s /bin/bash
 RUN echo $user':'$password | chpasswd
 

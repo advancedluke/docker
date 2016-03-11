@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y openssh-server supervisor
 
 RUN wget https://s3.amazonaws.com/get.influxdb.org/chronograf/chronograf_0.10.0_amd64.deb
 RUN sudo dpkg -i chronograf_0.10.0_amd64.deb
+RUN sed -i 's/127.0.0.1/0.0.0.0/g' /opt/chronograf/config.toml
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 22

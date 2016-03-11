@@ -1,4 +1,4 @@
-# Supervisord + SSHD 
+# Supervisord + SSHD + influxdb
 
 Base OS : Ubuntu 14.04
 

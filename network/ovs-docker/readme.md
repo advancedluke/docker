@@ -48,6 +48,10 @@ sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cgroup_enable=memory sw
 sudo update-grub
 ```
 
+#### Build Ubuntu Container with Supervisord + SSH
+https://github.com/advancedluke/docker/tree/master/dockerfiles/supervisord
+
+
 #### Run Docker Container
 ```sh
 container_name=cn1

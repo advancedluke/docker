@@ -51,7 +51,11 @@ sudo update-grub
 #### Run Docker Container
 ```sh
 container_name=cn1
-docker run -d --net='none' --privileged=true --name $container_name -h $container_name --add-host="$container_name:127.0.1.1" mcphub/ubuntu-sd:14.04
+docker run -d --net='none' --privileged=true -m 300M \
+--memory-reservation=200M --memory-swappiness=0 \
+--cpu-period=50000 --cpu-quota=50000 \
+-name $container_name -h $container_name --add-host="$container_name:127.0.1.1" \
+ubuntu-sd:14.04
 ```
 
 #### Container Network Configuration

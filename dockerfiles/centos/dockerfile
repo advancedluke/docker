@@ -13,6 +13,9 @@ RUN chmod u+w /etc/sudoers
 RUN echo "$user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers
 RUN chmod 440 /etc/sudoers
 
+# install ifconfig
+RUN yum -y install net-tools
+
 # install openssh server
 RUN yum -y install openssh-server
 

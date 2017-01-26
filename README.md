@@ -32,6 +32,7 @@ docker run -d \
 -m 300M \
 --memory-reservation=200M \
 --memory-swappiness=0 \
+--cpus=0.000 \
 --cpu-period=50000 \
 --cpu-quota=50000 \
 --name cn1 \

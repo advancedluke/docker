@@ -20,8 +20,9 @@ sudo chmod +x /usr/bin/docker
 
 ### Docker run
 ```sh
+docker exec -i -t [conainerNam|ID] /bin/bash
 docker run -d -p 80:80 --name my_image nginx
-docker run -d --privileged=true --name cn1 -h cn1 mcphub/ubuntu-sd:14.04
+docker run -d --privileged=true --name [containerName] -h [hostName] cheese/ubuntu-sd:16.04
 ```
 
 ### Docker run - extra options
@@ -36,7 +37,7 @@ docker run -d \
 --name cn1 \
 -h cn1 \
 --restart=always
-mcphub/ubuntu-sd:14.04
+cheese/ubuntu-sd:16.04
 ```
 
 http://docs.docker.com/engine/reference/commandline/run/

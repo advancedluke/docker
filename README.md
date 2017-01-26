@@ -20,9 +20,9 @@ sudo chmod +x /usr/bin/docker
 
 ### Docker run
 ```sh
-docker exec -i -t [conainerNam|ID] /bin/bash
 docker run -d -p 80:80 --name my_image nginx
 docker run -d --privileged=true --name [containerName] -h [hostName] cheese/ubuntu-sd:16.04
+docker exec -i -t [conainerNam|ID] /bin/bash
 ```
 
 ### Docker run - extra options

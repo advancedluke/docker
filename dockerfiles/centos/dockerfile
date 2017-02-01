@@ -1,12 +1,13 @@
 FROM centos:7
 MAINTAINER Cheese <iyham@naver.com>
 
-VOLUME /sys/fs/cgroup /run /tmp
-ENV container=docker
+ENV container "docker"
 ENV user "cheese"
 ENV password "changeme"
 RUN useradd $user -m -s /bin/bash
 RUN echo $user':'$password |chpasswd
+
+VOLUME [ "/sys/fs/cgroup" ]
 
 RUN yum -y update && yum clean all
 
@@ -59,3 +60,4 @@ RUN echo  >> /etc/supervisord.d/ssh.ini
 EXPOSE 22
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["/usr/sbin/init"]

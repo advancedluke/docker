@@ -1,6 +1,8 @@
 FROM centos:7
 MAINTAINER Cheese <iyham@naver.com>
 
+VOLUME /sys/fs/cgroup /run /tmp
+ENV container=docker
 ENV user "cheese"
 ENV password "changeme"
 RUN useradd $user -m -s /bin/bash
